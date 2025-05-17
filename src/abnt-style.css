@@ -1,0 +1,137 @@
+/* Estilos para formatação ABNT no PDF */
+
+/* Configurações gerais da página */
+@page {
+    size: A4;
+    margin: 3cm 2cm 2cm 3cm; /* Superior, direita, inferior, esquerda */
+}
+
+/* Estilos de texto */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    text-align: justify;
+    color: #000000;
+}
+
+/* Títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 16pt;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 2em;
+}
+
+h2 {
+    font-size: 14pt;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 12pt;
+    text-transform: uppercase;
+}
+
+h4, h5, h6 {
+    font-size: 12pt;
+}
+
+/* Parágrafos */
+p {
+    margin-bottom: 0.5em;
+    text-indent: 1.25cm; /* Recuo de parágrafo de 1,25cm */
+}
+
+/* Listas */
+ul, ol {
+    margin-left: 1.25cm;
+    margin-bottom: 1em;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+/* Tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+}
+
+th, td {
+    border: 1px solid #000;
+    padding: 0.5em;
+}
+
+th {
+    font-weight: bold;
+    background-color: #f2f2f2;
+}
+
+/* Citações */
+blockquote {
+    margin: 1em 0;
+    padding: 0 1em;
+    border-left: 4px solid #ccc;
+    font-style: italic;
+}
+
+/* Espaçamento entre linhas */
+* {
+    line-height: 1.5;
+}
+
+/* Estilos para cláusulas de contrato */
+.clausula {
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+}
+
+.clausula-titulo {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Estilos para assinaturas */
+.assinatura {
+    margin-top: 3em;
+    text-align: center;
+}
+
+.linha-assinatura {
+    display: block;
+    width: 75%;
+    margin: 0 auto;
+    border-bottom: 1px solid #000;
+    margin-bottom: 0.5em;
+}
+
+/* Estilos para rodapé */
+.rodape {
+    font-size: 10pt;
+    text-align: center;
+    margin-top: 2em;
+}
+
+/* Estilos para cabeçalho */
+.cabecalho {
+    font-size: 10pt;
+    text-align: right;
+    margin-bottom: 2em;
+}
+
+/* Estilos para numeração de páginas */
+.numero-pagina {
+    position: absolute;
+    bottom: 1cm;
+    right: 2cm;
+    font-size: 10pt;
+}

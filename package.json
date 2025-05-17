@@ -1,0 +1,22 @@
+{
+  "name": "gerador-contratos",
+  "version": "1.0.0",
+  "description": "Site para geração de contratos em PDF com marca d'água",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "pdf-lib": "^1.17.1",
+    "temp": "^0.9.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

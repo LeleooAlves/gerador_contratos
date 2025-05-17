@@ -1,0 +1,125 @@
+/* Estilos gerais */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Estilos do cabeçalho */
+header {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para a lista de contratos */
+.list-group-item {
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.list-group-item:hover {
+    background-color: #f1f8ff;
+    border-left: 3px solid #0d6efd;
+}
+
+.list-group-item.active {
+    background-color: #e7f1ff;
+    color: #0d6efd;
+    border-left: 3px solid #0d6efd;
+    font-weight: bold;
+}
+
+/* Estilos para o formulário */
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.card-header {
+    border-radius: 0.5rem 0.5rem 0 0 !important;
+}
+
+/* Estilos para campos de formulário */
+.form-control:focus, .form-select:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Estilos para o preview da marca d'água */
+#watermark-preview {
+    background-color: #f8f9fa;
+    border-radius: 0.25rem;
+}
+
+/* Estilos para telas pequenas */
+@media (max-width: 992px) {
+    .list-group {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .list-group-item {
+        flex: 1 0 auto;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Animações */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Estilos para o modal de ajuda */
+.modal-body h6 {
+    color: #0d6efd;
+    margin-top: 1rem;
+}
+
+/* Estilos para os ícones */
+.bi {
+    line-height: 1;
+}
+
+/* Estilos para o rodapé */
+footer {
+    margin-top: auto;
+}
+
+/* Estilos para campos obrigatórios */
+.required-field::after {
+    content: " *";
+    color: #dc3545;
+}
+
+/* Estilos para mensagens de erro */
+.invalid-feedback {
+    display: none;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 0.875em;
+    color: #dc3545;
+}
+
+.was-validated .form-control:invalid ~ .invalid-feedback,
+.was-validated .form-select:invalid ~ .invalid-feedback,
+.form-control.is-invalid ~ .invalid-feedback,
+.form-select.is-invalid ~ .invalid-feedback {
+    display: block;
+}
+
+/* Estilos para o botão de ajuda */
+#help-btn {
+    transition: all 0.3s ease;
+}
+
+#help-btn:hover {
+    background-color: white;
+    color: #0d6efd;
+}

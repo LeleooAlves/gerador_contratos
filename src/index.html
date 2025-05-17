@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Contratos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="bg-primary text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="mb-0">Gerador de Contratos</h1>
+                    <p class="lead mb-0">Crie contratos profissionais em minutos</p>
+                </div>
+                <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                    <button class="btn btn-outline-light" id="help-btn">Ajuda</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-lg-3 mb-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Tipos de Contrato</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="list-group" id="contract-list">
+                            <a href="#" class="list-group-item list-group-item-action" data-contract="01_contrato_desenvolvimento_web">Desenvolvimento Web</a>
+                            <a href="#" class="list-group-item list-group-item-action" data-contract="02_contrato_prestacao_servicos_gerais">Prestação de Serviços Gerais</a>
+                            <a href="#" class="list-group-item list-group-item-action" data-contract="03_contrato_locacao_residencial">Locação Residencial</a>
+                            <a href="#" class="list-group-item list-group-item-action" data-contract="04_contrato_compra_venda_veiculo">Compra e Venda de Veículo</a>
+                            <a href="#" class="list-group-item list-group-item-action" data-contract="05_contrato_trabalho_prazo_determinado">Trabalho por Prazo Determinado</a>
+                            <a href="#" class="list-group-item list-group-item-action" data-contract="06_contrato_uniao_estavel">União Estável</a>
+                            <a href="#" class="list-group-item list-group-item-action" data-contract="07_contrato_locacao_comercial">Locação Comercial</a>
+                            <a href="#" class="list-group-item list-group-item-action" data-contract="08_contrato_comodato_imovel">Comodato de Imóvel</a>
+                            <a href="#" class="list-group-item list-group-item-action" data-contract="09_contrato_parceria_empresarial">Parceria Empresarial</a>
+                            <a href="#" class="list-group-item list-group-item-action" data-contract="10_contrato_confidencialidade_nda">Confidencialidade (NDA)</a>
+                            <a href="#" class="list-group-item list-group-item-action" data-contract="11_contrato_representacao_comercial">Representação Comercial</a>
+                            <a href="#" class="list-group-item list-group-item-action" data-contract="12_contrato_estagio">Estágio</a>
+                            <a href="#" class="list-group-item list-group-item-action" data-contract="13_contrato_servicos_medicos">Serviços Médicos</a>
+                            <a href="#" class="list-group-item list-group-item-action" data-contract="14_contrato_freelancer">Freelancer</a>
+                            <a href="#" class="list-group-item list-group-item-action" data-contract="15_contrato_emprestimo_dinheiro">Empréstimo de Dinheiro</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9">
+                <div id="welcome-screen" class="text-center py-5">
+                    <h2>Bem-vindo ao Gerador de Contratos</h2>
+                    <p class="lead">Selecione um tipo de contrato ao lado para começar</p>
+                    <div class="row mt-5">
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-file-earmark-text display-4 text-primary"></i>
+                                    <h5 class="mt-3">Modelos Profissionais</h5>
+                                    <p>Contratos elaborados com cláusulas rígidas e conforme a legislação brasileira</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-pencil-square display-4 text-primary"></i>
+                                    <h5 class="mt-3">Personalização Completa</h5>
+                                    <p>Preencha os campos e adapte o contrato às suas necessidades específicas</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-file-earmark-pdf display-4 text-primary"></i>
+                                    <h5 class="mt-3">Exportação em PDF</h5>
+                                    <p>Gere documentos em PDF formatados conforme as normas ABNT</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="form-container" class="d-none">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0" id="contract-title">Formulário de Contrato</h5>
+                            <button class="btn btn-sm btn-outline-light" id="back-btn">Voltar</button>
+                        </div>
+                        <div class="card-body">
+                            <form id="contract-form">
+                                <!-- Campos dinâmicos serão inseridos aqui -->
+                                <div id="dynamic-fields"></div>
+                                
+                                <div class="mb-4 mt-4">
+                                    <h5>Marca d'água (opcional)</h5>
+                                    <div class="input-group">
+                                        <input type="file" class="form-control" id="watermark-upload" accept="image/png,image/jpeg,image/gif">
+                                        <button class="btn btn-outline-secondary" type="button" id="preview-watermark">Visualizar</button>
+                                    </div>
+                                    <small class="form-text text-muted">Envie uma imagem sem fundo (transparente) para ser usada como marca d'água no contrato.</small>
+                                    <div id="watermark-preview" class="mt-2 d-none">
+                                        <img src="" alt="Prévia da marca d'água" class="img-fluid border p-2" style="max-height: 150px;">
+                                    </div>
+                                </div>
+                                
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button type="button" class="btn btn-secondary" id="reset-form">Limpar</button>
+                                    <button type="submit" class="btn btn-primary">Gerar Contrato</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2025 Gerador de Contratos. Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>Os contratos gerados devem ser revisados por um profissional qualificado.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Ajuda -->
+    <div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="helpModalLabel">Como usar o Gerador de Contratos</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Passo 1: Selecione o tipo de contrato</h6>
+                    <p>Escolha entre os diversos modelos disponíveis no menu lateral.</p>
+                    
+                    <h6>Passo 2: Preencha o formulário</h6>
+                    <p>Complete todos os campos necessários com as informações específicas do seu contrato.</p>
+                    
+                    <h6>Passo 3: Adicione uma marca d'água (opcional)</h6>
+                    <p>Faça upload de uma imagem sem fundo para ser usada como marca d'água no documento.</p>
+                    
+                    <h6>Passo 4: Gere o contrato</h6>
+                    <p>Clique em "Gerar Contrato" para criar o documento em formato PDF, formatado de acordo com as normas ABNT.</p>
+                    
+                    <h6>Observações importantes:</h6>
+                    <ul>
+                        <li>Os contratos gerados são modelos e devem ser revisados por um profissional qualificado.</li>
+                        <li>Todas as informações inseridas são processadas localmente e não são armazenadas em servidores.</li>
+                        <li>Para melhores resultados, utilize imagens com fundo transparente (formato PNG) para a marca d'água.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"></script>
+    <script src="script.js"></script>
+</body>
+</html>
