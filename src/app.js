@@ -30,6 +30,7 @@ app.use((err, req, res, next) => {
 
 // Servir arquivos estáticos
 app.use(express.static(path.join(__dirname)));
+app.use(express.static(path.join(__dirname, '..', 'src')));
 
 // Configuração do armazenamento de uploads
 const storage = multer.diskStorage({
